@@ -7,7 +7,7 @@ export const Products = () => {
 
     const [loading, setLoading] = useState(true);
     const [sort, setSort] = useState();
-    const [category, setCategory] = useState();
+    const [category, setCategory] = useState("all");
     const [data, setData] = useState([]);
     const [products, setProducts] = useState([]);
 
@@ -16,6 +16,15 @@ export const Products = () => {
     }, []);
 
     useEffect(() => {
+        console.log(category);
+
+        let filteredProducts = [];
+        if (category === "all") {
+            filteredProducts = data;
+        } else {
+            filteredProducts = data.filter((product) => product.category === category);
+        }
+        
         let priceAsc = (a, b) => {
             return a.price - b.price;
         }
@@ -29,32 +38,24 @@ export const Products = () => {
             return b.title.localeCompare(a.title)
         }
 
+        let orderedProducts = filteredProducts;
+
         switch(sort) {
             case "Price (asc)":
-                setProducts(products.slice().sort(priceAsc)); 
+                orderedProducts = filteredProducts.slice().sort(priceAsc); 
                 break;
             case "Price (desc)":
-                setProducts(products.slice().sort(priceDesc)); 
+                orderedProducts = filteredProducts.slice().sort(priceDesc); 
                 break;
             case "Title (asc)":
-                setProducts(products.slice().sort(titleAsc)); 
+                orderedProducts = filteredProducts.slice().sort(titleAsc); 
                 break;
             case "Title (desc)":
-                setProducts(products.slice().sort(titleDesc)); 
+                orderedProducts = filteredProducts.slice().sort(titleDesc); 
                 break;
         }
-    }, [sort]);
-
-    useEffect(() => {
-        if (category === "all") {
-            setProducts(data);
-        } else {
-            let filterBy = (category) => {
-                return data.slice().filter((product) => product.category === category)
-            }
-            setProducts(filterBy(category));
-        }
-    }, [category]);
+        setProducts(orderedProducts);
+    }, [sort, category]);
 
     const getProducts = () => {
         fetch("https://fakestoreapi.com/products")
