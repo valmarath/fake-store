@@ -9,6 +9,11 @@ export const Filter = ({ sort, category }) => {
         getCategory();
       }, [])
 
+
+    const searchHandler = (e) => {
+        e.preventDefault();
+    }
+
     const getCategory = () => {
         fetch("https://fakestoreapi.com/products/categories")
         .then(response => {
@@ -29,11 +34,20 @@ export const Filter = ({ sort, category }) => {
     }
 
     return (
-        <div>
-            <input placeholder='search'></input>
+        <div className='filters'>
+            <form className='search' onSubmit={searchHandler}>
+                <p>Search</p>
+                <input className='searchInput'></input>
+                <button type='submit'>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+    </svg>
+                </button>
+            </form>
 
-            <select defaultValue="" onChange={categoryChangeHandler}>
+            <select defaultValue="" onChange={categoryChangeHandler} className='category'>
                 <option value={""} disabled>Category</option>
+                <option value={"all"}>all</option>
                 {categoryData.map((option, index) => {
                 return <option key={index} >
                             {option}
@@ -41,7 +55,7 @@ export const Filter = ({ sort, category }) => {
                     })}
             </select>
 
-            <select defaultValue="" onChange={sortChangeHandler}>
+            <select defaultValue="" onChange={sortChangeHandler} className='sort'>
             <option value="" disabled>SortBy</option>
             {sortOptions.map((option, index) => {
                 return <option key={index} >
