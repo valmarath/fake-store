@@ -1,0 +1,17 @@
+#root {
+  max-width: 1440px;
+  margin: 0 auto;
+  text-align: center;
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
