@@ -4,7 +4,6 @@ import { Products } from './components/Products';
 import { Login } from './components/Login';
 import { Cart } from './components/Cart';
 import { Footer } from './components/Footer';
-import { NotFound } from './components/NotFound';
 import './App.scss';
 
 function App() {
