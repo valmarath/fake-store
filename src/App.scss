@@ -15,3 +15,144 @@
   flex-direction: column;
   min-height: 100vh;
 }
+
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 1000ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open{
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close{
+  opacity: 0;
+}
+
+.modal-overlay {
+  background-color: rgba(0,0,0,0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  width: 1094px;
+  height: 463px;
+  background-color: #FFF;
+  border: 1px solid #EDEDED;
+  border-radius: 16px;
+  box-shadow:0px 24px 48px 0 rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+
+.modal-content:focus {
+  outline: none;
+}
+
+.modal-content .closeModal {
+  position: absolute;
+  right: 25px;
+  top: 20px;
+  cursor: pointer;
+}
+
+.modal-content .closeModal svg {
+  height: 26px;
+  width: 26px;
+}
+
+.modal-content .productImage{
+  padding: 0px;
+  margin-left: 65px;
+  margin-right: 31px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content .productImage img{
+  height: 380px;
+  width: 277px;
+}
+
+.modal-content .productInfo {
+  width: 690px;
+  height: 380px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px;
+}
+
+.modal-content .productTitle {
+  width: 100%;
+  font-size: 16px;
+  display: block;
+}
+
+.ratingSection {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 2px;
+}
+
+.modal-content .productStar {
+  height: 21px;
+}
+
+.modal-content .productStar svg {
+  height: 21px;
+  margin-right: 5px;
+}
+
+.modal-content .productRate {
+  font-size: 16px;
+  margin-left: 5px;
+}
+
+.modal-content .productRatingCount {
+  font-size: 16px;
+}
+
+.modal-content .productLine {
+  padding: 0px;
+}
+
+.modal-content .productDescription{
+  line-height: 18px;
+  color: #8F8B8B;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.modal-content .productCategory{
+  display: flex;
+  justify-content: center;
+  width: 220px;
+  font-size: 16px;
+  padding: 3px 0px;
+}
+
+.modal-content .productBuy {
+  height: 43px;
+  width: 261px;
+  background-color: #2B32DC;
+  border-radius: 18px;
+  font-size: 14px;
+  line-height: 18px;
+  color: #FFF;
+  border: none;
+  padding: 9px 14px;
+  cursor: pointer;
+  outline: none;
+}

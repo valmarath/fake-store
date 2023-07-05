@@ -1,3 +1,12 @@
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    color: #666;
+    font-size: 25px;
+}
+
 .products {
     margin: 20px auto;
     width: 100%;
@@ -72,6 +81,7 @@ hr {
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+    color: #222;
 }
 
 .productCategory,
@@ -121,4 +131,3 @@ hr {
     font-size: 16px;
     line-height: 18px;
 }
-

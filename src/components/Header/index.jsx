@@ -7,7 +7,9 @@ export const Header = () => {
         <header>
             <div className="headerContainer">
                 <div className="headerLeft">
-                    <h1>Brand</h1>
+                    <Link to={'/'}>
+                        <h1>Brand</h1>
+                    </Link>
                 </div>
                 <div className="headerRight">
                     <Link to={'/login'} className="loginButton">
