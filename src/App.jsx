@@ -15,10 +15,9 @@ function App() {
         
       <div className="container">
         <Routes>
-          <Route path="/" element={<Products />} />
+          <Route path="/fake-store" element={<Products />} />
           <Route path="/login" element={<Login />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="*" element={<NotFound />} />
 
         </Routes>
       </div>
