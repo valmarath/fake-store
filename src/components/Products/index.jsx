@@ -162,7 +162,7 @@ export const Products = () => {
                     overlayClassName="modal-overlay"
                     className="modal-content"
                     ariaHideApp={false}
-                    closeTimeoutMS={1000}
+                    closeTimeoutMS={500}
                 >
                     <div className='productImage'><img src={modalProduct.image}/></div>
                     <div className='productInfo'>
