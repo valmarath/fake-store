@@ -7,7 +7,7 @@ export const Header = () => {
         <header>
             <div className="headerContainer">
                 <div className="headerLeft">
-                    <Link to={'/'}>
+                    <Link to={'/fake-store'}>
                         <h1>Brand</h1>
                     </Link>
                 </div>
